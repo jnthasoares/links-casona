@@ -137,7 +137,6 @@ function App() {
     <>
       <div className="profile-section">
         <img src="/logo.png" alt="Casona Açaí" className="brand-logo" />
-        <p className="subtitle">Qual loja?</p>
       </div>
 
       {!selectedStore ? (
