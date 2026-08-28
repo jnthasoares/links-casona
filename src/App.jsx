@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Store, MapPin, ChevronRight, ArrowLeft, Utensils, MessageCircle, ShoppingBag, Navigation } from 'lucide-react';
+import { MapPin, ChevronRight, ArrowLeft } from 'lucide-react';
 import './index.css';
 
 const STORES = [
@@ -45,14 +45,13 @@ function formatDistance(distKm) {
 
 const DELIVERIES = {
   loja1: [
-    { name: 'iFood', desc: 'Peça rápido pelo iFood', icon: <ShoppingBag size={24} />, url: '#' },
-    { name: 'Site Oficial', desc: 'Preços exclusivos', icon: <Utensils size={24} />, url: '#' },
-    { name: 'WhatsApp', desc: 'Fale com a gente', icon: <MessageCircle size={24} />, url: '#' }
+    { name: 'iFood', desc: 'Peça pelo iFood', icon: <img src="/ifood.png" alt="iFood" className="delivery-logo" />, url: 'https://www.ifood.com.br/delivery/santo-andre-sp/casona-acai-santo-andre---coop-vila-tibirica/a0fbe88c-3224-4885-80bd-58dd52206e4b' },
+    { name: '99Food', desc: 'Peça pelo 99Food', icon: <img src="/99food.jpg" alt="99Food" className="delivery-logo" />, url: 'https://oia.99app.com/dlp9/3yOkMa?area=BR' },
+    { name: 'Keeta', desc: 'Peça pelo Keeta', icon: <img src="/keeta.png" alt="Keeta" className="delivery-logo" />, url: 'https://url-eu.mykeeta.com/0SjJld5z' }
   ],
   loja2: [
-    { name: 'iFood', desc: 'Peça rápido pelo iFood', icon: <ShoppingBag size={24} />, url: '#' },
-    { name: 'Site Oficial', desc: 'Preços exclusivos', icon: <Utensils size={24} />, url: '#' },
-    { name: 'Rappi', desc: 'Entrega turbo', icon: <ShoppingBag size={24} />, url: '#' }
+    { name: 'iFood', desc: 'Peça pelo iFood', icon: <img src="/ifood.png" alt="iFood" className="delivery-logo" />, url: 'https://www.ifood.com.br/delivery/maua-sp/casona-acai---maua-itapark-jardim-itapark/690430a8-3054-4d6e-830f-0d25f5d71a21' },
+    { name: '99Food', desc: 'Peça pelo 99Food', icon: <img src="/99food.jpg" alt="99Food" className="delivery-logo" />, url: 'https://oia.99app.com/dlp9/sAW7la?area=BR' }
   ]
 };
 
@@ -170,10 +169,6 @@ function App() {
         </div>
       ) : (
         <div className="cards-container">
-          <button className="back-btn" onClick={handleBack}>
-            <ArrowLeft size={20} /> Voltar para Lojas
-          </button>
-          
           {DELIVERIES[selectedStore].map((delivery, idx) => (
             <a 
               key={idx} 
@@ -192,6 +187,10 @@ function App() {
               <ChevronRight size={24} color="var(--text-muted)" />
             </a>
           ))}
+
+          <button className="back-btn" onClick={handleBack}>
+            <ArrowLeft size={20} /> Voltar para Lojas
+          </button>
         </div>
       )}
 
