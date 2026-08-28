@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #63236e; /* Açaí Purple (Lighter) */
+  --primary-light: #8e3599;
+  --bg-dark: #25102a;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #46194e 0%, #1a0a1d 80%);
+  --glass-bg: rgba(0, 0, 0, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-hover: rgba(0, 0, 0, 0.4);
+  --text-main: #ffffff;
+  --text-muted: #d4c5d8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg-dark);
+  background-image: var(--bg-gradient);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  max-width: 480px; /* Mobile width */
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  animation: slideDown 0.6s ease-out;
+}
+
+.brand-logo {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 12px rgba(76, 24, 84, 0.4));
+  animation: slideDown 0.6s ease-out;
+}
+
+.brand-slogan {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 12px rgba(76, 24, 84, 0.3));
+  animation: fadeIn 0.6s ease-out 0.4s both;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.cards-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fadeIn 0.6s ease-out 0.2s both;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: white;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+}
+
+.glass-card:hover, .glass-card:active {
+  background: var(--glass-hover);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 12px;
+  background: rgba(123, 44, 134, 0.2);
+  color: #df98eb;
+}
+
+.closest-card {
+  border-color: rgba(175, 78, 190, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.closest-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: rgba(123, 44, 134, 0.4);
+  color: #f1bfff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(197, 107, 210, 0.3);
+  letter-spacing: 0.3px;
+}
+
+.card-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.card-distance {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #d195dd;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.1rem;
+}
+
+.distance-icon {
+  color: #d195dd;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s;
+  font-family: inherit;
+  align-self: flex-start;
+}
+
+.back-btn:hover {
+  color: white;
+}
+
+.social-links {
+  margin-top: auto;
+  padding-top: 3rem;
+  display: flex;
+  gap: 1rem;
+  animation: fadeIn 0.6s ease-out 0.4s both;
+}
+
+.social-icon {
+  color: var(--text-main);
+  background: var(--glass-bg);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 1px solid var(--glass-border);
+}
+
+.social-icon:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
