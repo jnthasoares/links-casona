@@ -162,7 +162,7 @@ body {
 .card-distance {
   font-size: 0.8rem;
   font-weight: 500;
-  color: #d195dd;
+  color: #4ade80; /* Vibrant green */
   display: flex;
   align-items: center;
   gap: 0.3rem;
@@ -170,7 +170,7 @@ body {
 }
 
 .distance-icon {
-  color: #d195dd;
+  color: #4ade80;
 }
 
 .back-btn {
