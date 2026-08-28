@@ -7,16 +7,16 @@ const STORES = [
     id: 'loja1',
     name: 'Casona Açaí - Santo André',
     address: 'Av. Dom Pedro I, 170 - Vila América',
-    lat: -23.6698,
-    lng: -46.5165,
+    lat: -23.6659798,
+    lng: -46.5149394,
     icon: <MapPin size={24} />
   },
   {
     id: 'loja2',
     name: 'Casona Açaí - Mauá',
     address: 'Av. Itapark, 2641 A - Jd. Itapark',
-    lat: -23.6735,
-    lng: -46.4382,
+    lat: -23.6839671,
+    lng: -46.4394077,
     icon: <MapPin size={24} />
   }
 ];
@@ -70,17 +70,7 @@ function App() {
       });
     };
 
-    // 1. Tenta pegar via IP para resposta instantânea no PC/Mobile
-    fetch('https://get.geojs.io/v1/ip/geo.json')
-      .then((res) => res.json())
-      .then((data) => {
-        if (data && data.latitude && data.longitude) {
-          setLocationIfValid(parseFloat(data.latitude), parseFloat(data.longitude));
-        }
-      })
-      .catch(() => {});
-
-    // 2. Tenta pegar a localização precisa do navegador (GPS / Wi-Fi)
+    // Tenta pegar a localização precisa do navegador (GPS / Wi-Fi)
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
         (pos) => {
